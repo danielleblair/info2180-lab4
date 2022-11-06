@@ -39,6 +39,10 @@ form{
     border-radius: 15px;
 }
 
+h2{
+    color:blue;
+}
+
 #searchLstBtn{
     width:95%;
     height:50px;
