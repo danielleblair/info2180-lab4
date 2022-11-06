@@ -1,0 +1,50 @@
+
+.container{
+    background-color: aquamarine;
+    height: 600px;
+}
+
+body{
+    color:black;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.search-container{
+    justify-content: center;
+    height: 80%;
+    width: 70%;
+    margin: 0 auto;
+}
+
+h1{
+    background-color:cadetblue;
+    color:midnightblue;
+    text-align: center;
+    padding: 30px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+form{
+    display: grid;
+    gap: 20px;;
+    grid-template-columns: 80% 20%;
+    height: 70px;
+    margin: 0 auto;
+}
+
+.form-group input{
+    width:95%;
+    height: 20px;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+#searchLstBtn{
+    width:95%;
+    height:50px;
+    padding: 15px;
+    background-color: lightblue;
+    border-radius: 15px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+

@@ -65,8 +65,106 @@ $superheroes = [
 
 ?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+<?php
+/*
+$herofind = filter_input(INPUT_GET,'query',FILTER_SANITIZE_STRING);
+    <?php if ($herofind == ""):?>
+        <ul>
+        <?php foreach ($superheroes as $superhero): ?>
+            <li><?= $superhero['alias']; ?></li>
+        <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+
+    <?php else: ?>
+    <?php    foreach ($superheroes as $superhero): ?>
+            <?php if($superhero["alias"]==$herofind or $superhero["name"]==$herofind): 
+                $alias= $superhero["alias"]; 
+                $name= $superhero["name"]; 
+                $biography=$superhero["biography"]; 
+            ?>
+                <h3><?php echo $alias; ?></h3>
+                <h4><?php echo " A.K.A. ".$name; ?></h4>
+                <p><?php echo $biography; ?></p>
+            <?php endif; 
+             endforeach; ?>
+            <?php else: 
+                echo "No hero"
+            ?>
+*/
+?>
+
+<?php
+$herofind = filter_input(INPUT_GET,'query',FILTER_SANITIZE_STRING); 
+$find = false;
+?>
+
+<?php
+/*
+
+    <?php if ($herofind == ""): ?>
+        <ul>
+        <?php foreach ($superheroes as $superhero): ?>
+            <li><?= $superhero['alias']; ?></li>
+        <?php endforeach; ?>
+        </ul>
+   
+
+
+    <?php elseif ($herofind != ""):?>
+        <?php foreach ($superheroes as $superhero){
+            if($superhero["alias"]==$herofind or $superhero["name"]==$herofind){
+                $alias= $superhero["alias"]; 
+                $name= $superhero["name"]; 
+                $biography=$superhero["biography"]; 
+                $find = true;
+            };
+        }; ?>
+        <?php endif ?>
+    
+                    
+        <?php if ($name != '' && $alias != '' && $bigraphy !=''): ?>               
+            <h3><?php echo $alias; ?></h3> 
+            <h4><?php echo " A.K.A. ".$name; ?></h4>
+            <p><?php echo $biography; ?></p>
+        <?php if ($find==false):
+            echo "No hero"; ?>
+        <?php endif ?>
+        <?php endif ?>
+     */
+    ?>
+
+        <?php if ($herofind == ""): ?>
+                <ul>
+                <?php foreach ($superheroes as $superhero): ?>
+                    <li><?= $superhero['alias']; ?></li>
+                <?php endforeach; ?>
+                </ul>
+   
+
+        <?php elseif ($herofind != ""):?>
+            <?php foreach ($superheroes as $superhero){
+                if($superhero["alias"]==$herofind or $superhero["name"]==$herofind){
+                    $alias= $superhero["alias"]; 
+                    $name= $superhero["name"]; 
+                    $biography=$superhero["biography"]; 
+                    $find = true;
+                };
+            }; ?>
+
+            <?php if ($find == true): ?>               
+                <h3><?php echo $alias; ?></h3> 
+                <h4><?php echo " A.K.A. ".$name; ?></h4>
+                <p><?php echo $biography; ?></p>
+            <?php endif ?>
+
+            <?php if ($find==false):
+                echo "Superhero not found"; ?>
+            <?php endif ?>   
+
+        <?php endif ?>
+     
+              
+        
+
+        
